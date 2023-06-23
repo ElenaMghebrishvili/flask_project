@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block heading %}About Us{% endblock %}
+
+{% block content %}
+    <h1 class="text-light">Welcome - {{session['username']}} to Our Website</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-3 text-light">
+                <div class="card-body text-center">
+                    <h2>Find Vacancies</h2>
+                </div>
+            </div>
+            <div class="col-md-3 text-light">
+                <div class="card-body text-center">
+                    <h2>Add Vacancies</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 text-light">
+        <h2>What We Do:</h2>
+        <p>
+            Our platform serves as a comprehensive hub for job vacancies, offering a centralized database of diverse
+            opportunities across various industries and sectors. We prioritize user experience and have designed our
+            website to be intuitive and efficient, ensuring that you can easily navigate through our extensive collection
+            of vacancies.
+        </p>
+        <h3>For Job Seekers:</h3>
+        <p>
+            If you are actively searching for a job, [Your Company Name] is the perfect destination for you. Our platform
+            provides a one-stop solution, allowing you to explore a wide range of job openings, filter them based on your
+            preferences, and submit applications directly to the employers. We also offer valuable resources and guidance
+            to help you enhance your skills, polish your resume, and excel in interviews.
+        </p>
+        <h3>For Employers:</h3>
+        <p>
+            We understand the importance of finding the right talent for your organization. Our platform empowers
+            employers by providing a user-friendly interface to post and manage job vacancies efficiently. You can
+            showcase your company culture, attract qualified candidates, and leverage our extensive reach to find the
+            perfect fit for your team. Additionally, we offer advanced tools and analytics to streamline your recruitment
+            process and make informed hiring decisions.
+        </p>
+    </div>
+{% endblock %}

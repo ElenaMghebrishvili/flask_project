@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Vacancies{% endblock %}
+
+{% block heading %}Vacancies{% endblock %}
+
+{% block content %}
+    <h1 class="text-light">Job Vacancies</h1>
+    <div class="container text-light">
+        <form method="POST" action="{{ url_for('vacancy') }}" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="search_query" class="form-control" placeholder="Search jobs">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+
+        {% if jobs %}
+            <table class="table table-striped text-light">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Job</th>
+                        <th>Company</th>
+                        <th>Country</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for job in jobs %}
+                    <tr>
+                        <td>{{ job.Index }}</td>
+                        <td>{{ job.job }}</td>
+                        <td>{{ job.company }}</td>
+                        <td>{{ job.country }}</td>
+                        <td>{{ job.type }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No jobs found.</p>
+        {% endif %}
+    </div>
+{% endblock %}
